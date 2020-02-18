@@ -14,6 +14,9 @@ const server = express()
  */
 server.use(express.static('public'))
 
+//habilitar body do formulário
+server.use(express.urlencoded({extended: true}))
+
 /**
  * Configurando a template engine
  */
@@ -53,6 +56,21 @@ const donors = [
  */
 server.get("/", function(req, res){
     return res.render("index.html", {donors});
+})
+
+server.post("/", function(req, res){
+    //pegar dados do formulário
+    const name  = req.body.name
+    const email = req.body.email
+    const blood = req.body.blood
+
+    //colocando valores dentro do array
+    donors.push({
+        name:  name,
+        blood: blood,
+    })
+
+    return res.redirect("/")
 })
 
 /**
