@@ -19,15 +19,40 @@ server.use(express.static('public'))
  */
 const nunjucks = require("nunjucks")
 nunjucks.configure("./", {
-    express: server
+    express: server,
+    noCache: true
 })
+
+/**
+ * lista de doadores
+ * Vetor ou Array
+ */
+const donors = [
+    {
+        name: "Iohann Herber",
+        blood: "AB+"
+    },
+    {
+        name: "Christian Herber",
+        blood: "B+"
+    },
+    {
+        name: "Mara Jackeline",
+        blood: "A+"
+    },
+    {
+        name: "Kali Almeida",
+        blood: "O"
+    }
+]
+
 
 /**
  * configura a apresentação da página
  * retorna uma resposta ao servidor
  */
 server.get("/", function(req, res){
-    return res.render("index.html");
+    return res.render("index.html", {donors});
 })
 
 /**
