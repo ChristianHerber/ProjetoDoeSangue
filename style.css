@@ -1,0 +1,113 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    text-align: center;
+}
+header h1 {
+    margin: 70px 0;
+}
+header h2 {
+    font-weight: bold;
+}
+header p {
+    font-size: 14px;
+}
+header button {
+    background:#f04545;
+    border: none;
+    color: #ffff;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 15px 0;
+    outline: none;
+}
+header button:hover {
+    box-shadow: #f04545 0px 0px 3px;
+}
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 45px;
+    align-items: center;
+    width: 60%;
+    padding: 16px 64px;
+    background: #f04545;
+    border-radius: 6px;
+    color: #fff;
+    margin: 50px auto;
+    transition: all 0.3s;
+}
+.form h2 {
+    text-align: right;
+}
+.form input,
+.form button {
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 3px;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    outline-color: #f04545;
+}
+.form button {
+    background: #fff;
+    color: #222;
+    font-weight: bold;   
+    transition: 0.2s;
+}
+.form button:hover {
+    background: transparent;
+    color: #fff;
+    transition: 0.3s;
+}
+.form input::placeholder {
+    color: rgba(255,255,255,0.4)
+}
+main {
+    text-align: center;
+    margin: 30px 0;
+}
+main h2 {
+    font-weight: bold;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+main h2 span {
+    color: #f04545;
+}
+.donors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.donor {
+}
+.donors .donor .blood {
+    color: #f04545;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+.donors .donor .blood::before {
+    content:"";
+    background: #f0454557;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(-45deg);
+}
+.form.hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: -70px;
+    transition: all 0.3s;
+}
