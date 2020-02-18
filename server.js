@@ -1,8 +1,8 @@
 /**
+ * configura o servidor
  * importa o express
  */
 const express = require("express")
-
 /**
  * constante que recebe as
  * funcionalidade do express
@@ -10,15 +10,28 @@ const express = require("express")
 const server = express()
 
 /**
- * retorna uma resposta
- * ao servidor
+ * configurar o servidor para apresentar arquivos estáticos
  */
-server.get("/", function(req, res){
-    return res.send("Ok, cheguei aqui!");
+server.use(express.static('public'))
+
+/**
+ * Configurando a template engine
+ */
+const nunjucks = require("nunjucks")
+nunjucks.configure("./", {
+    express: server
 })
 
 /**
- * servidor rodando na porta 3000
+ * configura a apresentação da página
+ * retorna uma resposta ao servidor
+ */
+server.get("/", function(req, res){
+    return res.render("index.html");
+})
+
+/**
+ * ligar e rodar o servidor na porta 3000
  */
 server.listen(3000, function(){
     console.log("Servidor rodando na porta 3000")
