@@ -84,8 +84,8 @@ main h2 span {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.donor {
-}
+/* .donor {
+} */
 .donors .donor .blood {
     color: #f04545;
     font-size: 12px;
