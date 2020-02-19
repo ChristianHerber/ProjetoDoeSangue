@@ -114,3 +114,10 @@ main h2 span {
     margin-top: -70px;
     transition: all 0.3s;
 }
+footer {
+    text-align: center;
+    padding: 10px 0;
+}
+footer span {
+    color: #f04545;
+}
