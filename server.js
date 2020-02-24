@@ -28,18 +28,14 @@ const db = new Client({
 })
 db.connect()
 
-/*
 const Pool = require('pg').Pool
 const db = new Pool({
-    // *** Localhost ***
     user: 'postgres',
     password: 'root',
     host: 'localhost',
     port: 5432,
     database: 'doe'
-
-})
-*/
+})s
 
 /**
  * Configurando a template engine
