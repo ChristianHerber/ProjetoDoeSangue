@@ -22,11 +22,20 @@ server.use(express.urlencoded({extended: true}))
  */
 const Pool = require('pg').Pool
 const db = new Pool({
-    user: 'postgres',
-    password: 'root',
-    host: 'localhost',
+    // *** Localhost ***
+    // user: 'postgres',
+    // password: 'root',
+    // host: 'localhost',
+    // port: 5432,
+    // database: 'doe'
+
+    // *** Elephant ****
+    user: 'rupdvjpy',
+    password: '12-tESV5pGk042kOk9gMRaQEP06Ov5k7',
+    host: 'rajje.db.elephantsql.com',
     port: 5432,
-    database: 'doe'
+    database: 'rupdvjpy'
+
 })
 
 /**
@@ -69,7 +78,7 @@ server.post("/", function(req, res){
         values ($1, $2, $3)
     `
     const values = [name, email, blood]
-
+    
     db.query(query, values, function(err){
         if(err){
             return res.send("erro no banco de dados")
