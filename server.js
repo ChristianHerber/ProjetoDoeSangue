@@ -22,11 +22,11 @@ server.use(express.urlencoded({extended: true}))
  */
 const Pool = require('pg').Pool
 const db = new Pool({
-    user: 'postgres',
-    password: 'root',
-    host: 'localhost',
+    user: 'rupdvjpy', //postgres
+    password: '12-tESV5pGk042kOk9gMRaQEP06Ov5k7',
+    host: 'rajje.db.elephantsql.com',
     port: 5432,
-    database: 'doe'
+    database: 'rupdvjpy'
 })
 
 /**
