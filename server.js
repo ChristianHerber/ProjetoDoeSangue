@@ -20,23 +20,26 @@ server.use(express.urlencoded({extended: true}))
 /**
  * configurar conexão com BD
  */
+
+const { Client } = require('pg')
+const db = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+})
+db.connect()
+
+/*
 const Pool = require('pg').Pool
 const db = new Pool({
     // *** Localhost ***
-    // user: 'postgres',
-    // password: 'root',
-    // host: 'localhost',
-    // port: 5432,
-    // database: 'doe'
-
-    // *** Elephant ****
-    user: 'rupdvjpy',
-    password: '12-tESV5pGk042kOk9gMRaQEP06Ov5k7',
-    host: 'rajje.db.elephantsql.com',
+    user: 'postgres',
+    password: 'root',
+    host: 'localhost',
     port: 5432,
-    database: 'rupdvjpy'
+    database: 'doe'
 
 })
+*/
 
 /**
  * Configurando a template engine
